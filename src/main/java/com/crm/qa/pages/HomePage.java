@@ -1,5 +1,6 @@
 package com.crm.qa.pages;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.CacheLookup;
@@ -10,64 +11,38 @@ import com.crm.qa.base.TestBase;
 
 public class HomePage extends TestBase {
 
-	@FindBy(xpath = "//td[contains(text(),'User: Naveen K')]")
-	@CacheLookup
-	WebElement userNameLabel;
-
-	@FindBy(xpath = "//a[contains(text(),'Contacts')]")
-	WebElement contactsLink;
+	@FindBy(xpath = "//input[@title=\"Search for products, brands and more\"]")
+	WebElement searchBox;
 	
-	@FindBy(xpath = "//a[contains(text(),'New Contact')]")
-	WebElement newContactLink;
+	@FindBy(xpath="//button[@class=\"_2AkmmA _29YdH8\"]")
+	WebElement closeIcon;
 	
+	@FindBy(xpath="//button[@class=\"vh79eN\"]")
+	WebElement searchIcon;
 
-	@FindBy(xpath = "//a[contains(text(),'Deals')]")
-	WebElement dealsLink;
-
-	@FindBy(xpath = "//a[contains(text(),'Tasks')]")
-	WebElement tasksLink;
-
+	
 	// Initializing the Page Objects:
-	public HomePage() {
+	public HomePage(WebDriver driver) {
+		driver=this.driver;
 		PageFactory.initElements(driver, this);
 	}
 	
-	public String verifyHomePageTitle(){
-		return driver.getTitle();
+	public void clickClose() {
+		closeIcon.click();
 	}
 	
-	
-	public boolean verifyCorrectUserName(){
-		return userNameLabel.isDisplayed();
+	public void clickSearch() {
+		searchIcon.click();
 	}
 	
-	public ContactsPage clickOnContactsLink(){
-		contactsLink.click();
-		return new ContactsPage();
+	public void enterProductInProductsSearchBox(String productName) {
+		searchBox.sendKeys(productName);
 	}
 	
-	public DealsPage clickOnDealsLink(){
-		dealsLink.click();
-		return new DealsPage();
+	public void searchItemOnHomePage(String ProductName) throws InterruptedException {
+		Thread.sleep(5000);
+		clickClose();
+		enterProductInProductsSearchBox(ProductName);
+		clickSearch();
 	}
-	
-	public TasksPage clickOnTasksLink(){
-		tasksLink.click();
-		return new TasksPage();
-	}
-	
-	public void clickOnNewContactLink(){
-		Actions action = new Actions(driver);
-		action.moveToElement(contactsLink).build().perform();
-		newContactLink.click();
-		
-	}
-	
-	
-	
-	
-	
-	
-	
-
 }
