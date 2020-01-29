@@ -22,14 +22,10 @@ public class e2eTestCase extends TestBase{
 		initialization();
 	}
 	
-	@Test
-	
+	@Test	
 	public void e2eTest() throws InterruptedException {
 		
 		HomePage hm =new HomePage(driver);
-		
-		System.out.println("Thisbhjzxbn"+prop.getProperty("ProductName"));
-		
 		hm.searchItemOnHomePage(prop.getProperty("ProductName"));
 		
 		ProductsPage product= new ProductsPage(driver);

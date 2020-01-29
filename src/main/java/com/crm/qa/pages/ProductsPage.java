@@ -17,7 +17,8 @@ public ProductsPage(WebDriver driver) {
 	PageFactory.initElements(driver, this);
 }
 
-public void clickOnTheFirstProductFromListOfProducts() {
+public void clickOnTheFirstProductFromListOfProducts() throws InterruptedException {
+	Thread.sleep(5000);
 	firstProduct.click();
 }
 }
