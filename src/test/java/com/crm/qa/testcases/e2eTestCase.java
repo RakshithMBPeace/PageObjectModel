@@ -40,7 +40,7 @@ public class e2eTestCase extends TestBase{
 	
 	@AfterTest
 	public void closeBrowser() {
-		closeBrowser();
+		closeBrowserWindow();
 	}
 	
 

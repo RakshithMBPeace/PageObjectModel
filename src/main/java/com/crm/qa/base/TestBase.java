@@ -62,8 +62,8 @@ public class TestBase {
 		driver.get(prop.getProperty("URL"));
 	}
 	
-  public void closeBrowser() {
-		driver.close();
+  public void closeBrowserWindow() {
+		driver.quit();
 	}
 
 }
