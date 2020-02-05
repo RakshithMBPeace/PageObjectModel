@@ -7,12 +7,12 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.crm.qa.base.TestBase;
 
-public class ProductsPage extends TestBase{
+public class FlipKartProductsPage extends TestBase{
 	
 @FindBy(xpath="//div[@class=\"_3wU53n\"][1]")
 WebElement firstProduct;
 
-public ProductsPage(WebDriver driver) {
+public FlipKartProductsPage(WebDriver driver) {
 	driver=this.driver;
 	PageFactory.initElements(driver, this);
 }

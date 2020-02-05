@@ -9,7 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.crm.qa.base.TestBase;
 
-public class HomePage extends TestBase {
+public class FlipKartHomePage extends TestBase {
 
 	@FindBy(xpath = "//input[@title=\"Search for products, brands and more\"]")
 	WebElement searchBox;
@@ -22,7 +22,7 @@ public class HomePage extends TestBase {
 
 	
 	// Initializing the Page Objects:
-	public HomePage(WebDriver driver) {
+	public FlipKartHomePage(WebDriver driver) {
 		driver=this.driver;
 		PageFactory.initElements(driver, this);
 	}

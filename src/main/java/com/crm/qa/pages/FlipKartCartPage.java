@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.crm.qa.base.TestBase;
 
-public class CartPage extends TestBase{
+public class FlipKartCartPage extends TestBase{
 	
 	@FindBy(xpath="//div[@class=\"_3md1dr\"]/button[2]")
 	WebElement increaseQuantityIcon;
@@ -16,7 +16,7 @@ public class CartPage extends TestBase{
 	WebElement warningText;
 	
 	// Initializing the Page Objects:
-		public CartPage(WebDriver driver) {
+		public FlipKartCartPage(WebDriver driver) {
 			driver=this.driver;
 			PageFactory.initElements(driver, this);
 		}

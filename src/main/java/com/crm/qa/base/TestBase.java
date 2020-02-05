@@ -19,13 +19,13 @@ import org.openqa.selenium.support.events.EventFiringWebDriver;
 
 public class TestBase {
 	
-	public static WebDriver driver;
-	public static Properties prop;
+	public  WebDriver driver;
+	public  Properties prop;
 
 
 	
 	
-	public static void loadProperties() {
+	public  void loadProperties() {
 		try {
 			prop = new Properties();
 			FileInputStream ip = new FileInputStream(System.getProperty("user.dir")+"/testData.properties");
@@ -50,7 +50,7 @@ public class TestBase {
 		alt.dismiss();
 	}
 	
-	public static void initialization(){
+	public  void initialization(){
 		String browserName = prop.getProperty("browser");
 		
 		if(browserName.equals("chrome")){
@@ -59,7 +59,14 @@ public class TestBase {
 		}
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
-		driver.get(prop.getProperty("URL"));
+	}
+	
+	public void navigateToFlipkart() {
+		driver.get(prop.getProperty("FlipkartrtURL"));
+	}
+	
+	public void navigateToAmazon() {
+		driver.get(prop.getProperty("AmazonURL"));
 	}
 	
   public void closeBrowserWindow() {

@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.crm.qa.base.TestBase;
 
-public class ProductDescriptionPage extends TestBase{
+public class FlipKartProductDescriptionPage extends TestBase{
 
 @FindBy(xpath="//button[@class=\"_2AkmmA _2Npkh4 _2MWPVK\"]")
 WebElement addToCartButton;
@@ -15,7 +15,7 @@ WebElement addToCartButton;
 @FindBy(xpath="//div[@class=\"_1vC4OE _3qQ9m1\"]")
 WebElement priceText;
 
-public ProductDescriptionPage(WebDriver driver) {
+public FlipKartProductDescriptionPage(WebDriver driver) {
 	driver=this.driver;
 	PageFactory.initElements(driver, this);
 }

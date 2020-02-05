@@ -6,10 +6,10 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import com.crm.qa.base.TestBase;
-import com.crm.qa.pages.CartPage;
-import com.crm.qa.pages.HomePage;
-import com.crm.qa.pages.ProductDescriptionPage;
-import com.crm.qa.pages.ProductsPage;
+import com.crm.qa.pages.FlipKartCartPage;
+import com.crm.qa.pages.FlipKartHomePage;
+import com.crm.qa.pages.FlipKartProductDescriptionPage;
+import com.crm.qa.pages.FlipKartProductsPage;
 
 
 
@@ -20,21 +20,22 @@ public class e2eTestCase extends TestBase{
 	public void openBroswer() {
 		loadProperties();
 		initialization();
+		navigateToFlipkart();
 	}
 	
 	@Test	
 	public void e2eTest() throws InterruptedException {
 		
-		HomePage hm =new HomePage(driver);
+		FlipKartHomePage hm =new FlipKartHomePage(driver);
 		hm.searchItemOnHomePage(prop.getProperty("ProductName"));
 		
-		ProductsPage product= new ProductsPage(driver);
+		FlipKartProductsPage product= new FlipKartProductsPage(driver);
 		product.clickOnTheFirstProductFromListOfProducts();
 		
-		ProductDescriptionPage productDescription = new ProductDescriptionPage(driver);
+		FlipKartProductDescriptionPage productDescription = new FlipKartProductDescriptionPage(driver);
 		productDescription.readProductPrice();
 		
-		CartPage cart = new CartPage(driver);
+		FlipKartCartPage cart = new FlipKartCartPage(driver);
 		cart.increaseTheProductQuantityInNums();
 	}
 	
