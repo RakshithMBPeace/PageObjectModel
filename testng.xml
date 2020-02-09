@@ -5,6 +5,7 @@
   <test name="Regression1"   >
     <classes>
       <class name="com.crm.qa.testcases.e2eTestCase" />
+         <class name="com.crm.qa.testcases.e2eTestCase2" />
    </classes>
  </test>
 </suite>
